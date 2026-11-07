@@ -21,7 +21,9 @@ public class MergerSimulator {
 
         int mergers = 0;
 
-        while (market.size() >= 2) {
+        Company titan = null;
+
+        while (market.size() >= 2 && titan == null) {
             Company a = market.poll();
             Company b = market.poll();
 
@@ -32,7 +34,19 @@ public class MergerSimulator {
 
             System.out.println("MERGER: " + a.name + " and " + b.name + " have merged into "
                     + merged.name + " with size " + newSize + "!");
+
+
+            if (newSize >= 500000) {
+                titan = merged;
+            }
         }
+
+        if (titan != null) {
+            System.out.println("Industry Titan: " + titan);
+        } else {
+            System.out.println("No titan has emerged.");
+        }
+        System.out.println("Total mergers: " + mergers);
     }
 }
 
