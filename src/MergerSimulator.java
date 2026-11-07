@@ -18,6 +18,21 @@ public class MergerSimulator {
         Company smallest = market.poll();
         System.out.println("Smallest company: " + smallest);
         market.add(smallest);
+
+        int mergers = 0;
+
+        while (market.size() >= 2) {
+            Company a = market.poll();
+            Company b = market.poll();
+
+            int newSize = (int) ((a.size + b.size) * 1.1);
+            Company merged = new Company(a.name + "-" + b.name, newSize);
+            market.add(merged);
+            mergers++;
+
+            System.out.println("MERGER: " + a.name + " and " + b.name + " have merged into "
+                    + merged.name + " with size " + newSize + "!");
+        }
     }
 }
 
@@ -40,3 +55,4 @@ class Company implements Comparable<Company> {
         return name + " (size: " + size + ")";
     }
 }
+
