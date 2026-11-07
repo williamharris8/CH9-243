@@ -1,2 +1,1 @@
-# Journal
-Write your Journal questions and notes here.
+PHASE 1 - PriorityQueue knows the company is smallest because the Company class implements Comparable and comparies by size in compareTo. To merge largest companies first I'd have to reverse the comparison by flipping compareTo.
