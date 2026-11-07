@@ -3,3 +3,5 @@ PHASE 1 - PriorityQueue knows the company is smallest because the Company class 
 PHASE 2 - More efficient is PriorityQueue since it only rearranges a small part of itself every add or company removal. ArrayList have to re sort the entire list every merger. Adding is O(log n) while sorting a whole list O(n log n).
 
 PHASE 3 - If the check of queue size is forgotten the loops keeps calling poll and code would crash. Underflow happens when you try and remove something from a data structure thats already empty.
+
+PHASE 4 - I noticed that the program only checks for titans after a merger so a company that started over 500k wouldnt count until merger happens.
